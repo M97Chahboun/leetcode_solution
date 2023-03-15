@@ -1,8 +1,5 @@
-class TreeNode(object):
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from python.tree_node import TreeNode
+
 
 class Solution(object):
     def sumNumbers(self, root):

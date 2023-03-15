@@ -1,3 +1,5 @@
+import 'tree_node.dart';
+
 class Solution {
   int res = 0;
   int sumNumbers(TreeNode? root) {
@@ -22,11 +24,4 @@ void main(List<String> args) {
   TreeNode root =
       TreeNode(4, TreeNode(9, TreeNode(5), TreeNode(1)), TreeNode(0));
   print(Solution().sumNumbers(root));
-}
-
-class TreeNode {
-  int val;
-  TreeNode? left;
-  TreeNode? right;
-  TreeNode([this.val = 0, this.left, this.right]);
 }
