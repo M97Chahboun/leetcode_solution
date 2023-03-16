@@ -1,0 +1,74 @@
+import 'tree_node.dart';
+
+class Solution {
+  bool result = true;
+  bool isCompleteTree(TreeNode? root) {
+    treeNodeChecker(root);
+    return result;
+  }
+
+  void treeNodeChecker(TreeNode? node,
+      {TreeNode? prevNode, bool isLeft = false}) {
+    if (node == null && prevNode == null) {
+      return;
+    } else if (prevNode == null && node!.left == null && node.right == null) {
+      result = true;
+      return;
+    }
+    // if (node != null) {
+    //   if (node.left == null && node.right == null) {
+    //     bool checkNode =
+    //         isLeft ? prevNode!.left != null : prevNode!.right != null;
+    //     if (checkNode) {
+    //     result = false;
+    //     print('Node');
+    //     print(prevNode);
+    //     print(node);
+    //     }
+    //   }
+    // bool checkNode = isLeft ? node!.left != null : node!.right != null;
+    // if (checkNode) {
+    //   // print(' node $isLeft' + prevNode.toString());
+    //   print(node.toString() + (node.left != null).toString());
+    // }
+    // }
+    if (node != null && prevNode != null) {
+      print(node);
+      print(prevNode.left.toString() + " Left");
+      //     if (prevNode != null && (node.left == null && node.left == null)) {
+      //       print(node);
+      //       print(prevNode.left.toString() + " Left");
+      //       bool checkNode =
+      //           isLeft ? prevNode.right != null : prevNode.left != null;
+      //       if (checkNode) {
+      //         result = false;
+      //       }
+      //     }
+      //   }
+      //   treeNodeChecker(node == null ? null : node.right, prevNode: node);
+      //   treeNodeChecker(node == null ? null : node.left,
+      //       prevNode: node, isLeft: true);
+      // }
+    }
+  }
+}
+
+void main(List<String> args) {
+  TreeNode root = TreeNode(
+    1,
+    TreeNode(2, TreeNode(8), TreeNode(5)),
+    TreeNode(3, TreeNode(7), TreeNode(8)),
+  );
+  print(Solution().isCompleteTree(root));
+}
+
+ // if (isLeft && prevNode != null) {
+    //   bool checkNode = isLeft ? prevNode.right != null : prevNode.left != null;
+    //   if (checkNode) {
+    //     print(node);
+    //     result = false;
+    //   }
+    // }
+    // if (prevNode != null) {
+    //   print('${prevNode} == ${node!.left}');
+    // }
